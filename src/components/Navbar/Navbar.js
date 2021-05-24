@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button} from '../Button.js';
 import './Navbar.css';
-import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography } from '@material-ui/core';
+import { IconButton, Badge} from '@material-ui/core';
 import { ShoppingCart } from '@material-ui/icons';
 import useStyles from './styles';
 
