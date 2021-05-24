@@ -9,7 +9,7 @@ import{BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
   return (
-    <>
+    <div className='root'>
     <Router>
       <Navbar totalItems='2'/>
         <Switch>
@@ -24,7 +24,7 @@ function App() {
         </div>
         {/* <img src="./pictures/polpo.JPG" alt="logo" className="polpo-logo"></img> */}
       </header>
-</>
+  </div>
     
   );
 }

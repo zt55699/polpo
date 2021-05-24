@@ -1,3 +1,8 @@
+.App-header{
+  background-color: rgb(254, 248, 232);
+  text-align: center;
+}
+
 .polpo-logo{
   height: 40vmin;
   pointer-events: none;
