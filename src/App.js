@@ -1,14 +1,17 @@
 // import logo from './logo.svg';
 import React from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
+import Products from './components/Products/Products';
+
 import{BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 
 function App() {
   return (
     <>
     <Router>
-      <Navbar />
+      <Navbar totalItems='2'/>
         <Switch>
           <Route path="/" exact />
         </Switch>
@@ -16,7 +19,10 @@ function App() {
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <img src="./pictures/banner.jpg" alt="banner" className="banner"></img>
-        <img src="./pictures/polpo.JPG" alt="logo" className="polpo-logo"></img>
+        <div>
+          <Products />
+        </div>
+        {/* <img src="./pictures/polpo.JPG" alt="logo" className="polpo-logo"></img> */}
       </header>
 </>
     
