@@ -66,7 +66,7 @@ export default makeStyles((theme) => ({
     },
   },
   button: {
-      color:'white',
+      color:'black',
       marginRight: 0,
   }
 }));

@@ -1,32 +1,49 @@
 // import logo from './logo.svg';
-import React from 'react';
-import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import Products from './components/Products/Products';
+import React, { useState, useEffect } from 'react';
+// import './App.css';
 
-import{BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { commerce } from './lib/commerce';
+import {Products, Navbar, Cart } from './components';
 
 
-function App() {
+//import{BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
+const App = () => {
+  const [products, setProducts] = useState([]); 
+  const [cart, setCart] = useState({});
+
+  const fetchProducts = async () =>{
+    const { data } = await commerce.products.list();
+
+    setProducts(data);
+  }
+
+  const fetchCart = async () => {
+    setCart(await commerce.cart.retrieve());
+  }
+
+  const handleAddToCart = async (productId, quantity) => {
+    const item = await commerce.cart.add(productId, quantity);
+
+    setCart(item.cart);
+  }
+
+  useEffect(() => {
+    fetchProducts();
+    fetchCart();
+  }, []);
+
+
+  
   return (
-    <div className='root'>
-    <Router>
-      <Navbar totalItems='2'/>
-        <Switch>
-          <Route path="/" exact />
-        </Switch>
-      </Router>
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <img src="./pictures/banner.jpg" alt="banner" className="banner"></img>
-        <div>
-          <Products />
-        </div>
-        {/* <img src="./pictures/polpo.JPG" alt="logo" className="polpo-logo"></img> */}
-      </header>
-  </div>
-    
-  );
+    <div>
+      <Navbar totalItems={cart.total_items}/>
+      <Products products={products} onAddToCart={handleAddToCart}/>
+      {/* <Cart cart={cart} /> */}
+    </div>
+  )
 }
+
+
 
 export default App;
