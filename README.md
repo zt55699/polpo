@@ -1,7 +1,7 @@
 
 # thatshop.io created with React.js
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b3f7cdd2-b3d3-4647-bf3b-135d778e0845/deploy-status)](https://app.netlify.com/sites/thatshop/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b3f7cdd2-b3d3-4647-bf3b-135d778e0845/deploy-status)](https://app.netlify.com/sites/thatshop/deploys)<br>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
